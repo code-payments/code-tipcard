@@ -5,7 +5,13 @@
 [version-image]: https://img.shields.io/badge/version-0.1.0-blue.svg?style=flat
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
 
-This repository contains the backend for the Code Tip Card project. To learn more about the project, please visit [getcode.com](https://getcode.com).
+This repository contains the backend for the Code Tip Card project, a new feature in the Code app that enables any Code user to seamlessly accept tips from anyone in the world.
+
+##  What is Code?
+
+[Code](https://getcode.com) is a mobile app that leverages self custodial 
+blockchain technology to deliver a seamless payments experience that is instant, 
+global, and private. 
 
 ## Development
 The codebase is split into the following packages:
