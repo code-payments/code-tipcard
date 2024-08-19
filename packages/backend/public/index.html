@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#0f0c1f;">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Code Wallet Tip Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Twitter opengraph metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@getcode" />
+    <meta name="twitter:creator" content="@{{handle}}" />
+    <meta name="twitter:title" content="Code Wallet Tip Card" />
+    <meta name="twitter:description" content="Tip your favorite creators with Code Wallet" />
+    <meta name="twitter:image" content="https://tipcard.getcode.com/assets/images/{{platform}}/{{handle}}.png" />
+
+    <!-- Facebook opengraph metadata -->
+    <meta property="og:url" content="https://getcode.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Code Wallet Tip Card" />
+    <meta property="og:description" content="Tip your favorite creators with Code Wallet" />
+    <meta property="og:image" content="https://tipcard.getcode.com/assets/images/{{platform}}/{{handle}}.png" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2WBE7NGRPN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2WBE7NGRPN');
+    </script>
+
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module">
+      import code from 'https://js.getcode.com/v1';
+
+      (async () => {
+
+        const username = '{{handle}}';
+        const name = '{{platform}}';
+
+        const options = {
+          mode: 'tip',
+          platform: {
+            name,
+            username,
+          }
+        }
+
+        const { page } = code.elements.create('page', options);
+
+        page.on('error', (e) => { console.log('sdk-error', e); });
+        page.on('cancel', (e) => { console.log('sdk-cancel', e); });
+
+        page.mount('#app');
+
+      })();
+
+    </script>
+    
+  </body>
+</html>
